@@ -297,7 +297,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--off);color:var(--t1)
 .rp-icon.icon-factory::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a6650' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20'/%3E%3Cpath d='M5 20V8l6 4V8l6 4V4h3v16'/%3E%3C/svg%3E");}
 
 
-/* ════ SHARED HEADER/FOOTER/FIXEDBAR ════ */
+/* ════ SHARED ════ */
 /* ════ HEADER ════ */
 #hdr{
   position:fixed;top:0;left:0;right:0;z-index:900;
@@ -372,7 +372,6 @@ nav a:hover::after,nav a.act::after{transform:scaleX(1);}
 .mobile-nav a:last-child{border-bottom:none;}
 .mobile-nav a:hover{background:var(--glt);color:var(--g);}
 
-
 /* ハンバーガー（モバイルのみ） */
 .hamburger{
   display:none;flex-direction:column;justify-content:center;gap:5px;
@@ -401,8 +400,7 @@ nav a:hover::after,nav a.act::after{transform:scaleX(1);}
   transition:background .15s,color .15s;
 }
 .mobile-nav a:last-child{border-bottom:none;}
-.mobile-nav a:hover{background:var(--glt);color:var(--g);}
-/* hdr tel icon */
+.mobile-nav a:hover{background:var(--glt);color:var(--g);}/* hdr tel icon */
 .hdr-tel i,.cta-tel-num i,.cv-num i,
 .hdr-tel i{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a6650' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z'/%3E%3C/svg%3E");}
 
@@ -468,7 +466,6 @@ nav a:hover::after,nav a.act::after{transform:scaleX(1);}
 
 .cb-web:hover 
 
-
 .fixed-bar{
   position:fixed;bottom:0;left:0;right:0;z-index:900;
   display:grid;grid-template-columns:1fr 1fr 1fr 1fr;
@@ -514,13 +511,11 @@ nav a:hover::after,nav a.act::after{transform:scaleX(1);}
 .fb-recruit{background:#fff;border-top:2px solid var(--g);}
 .fb-recruit .fb-icon{color:var(--g);}
 .fb-recruit .fb-main{color:var(--navy);font-size:13px;}
-.fb-recruit .fb-sub{color:var(--t3);}
-/* 古いフローティングCTAは非表示 */
+.fb-recruit .fb-sub{color:var(--t3);}/* 古いフローティングCTAは非表示 */
 .float-cv{display:none!important;}
 
 /* fixed-bar 分の底余白 */
-body{padding-bottom:64px;}
-footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,255,255,.04);}
+body{padding-bottom:64px;}footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,255,255,.04);}
 .ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);}
 /* ロゴ：白背景JPEGをダーク背景で自然に見せる */
 .ft-logo-wrap{
@@ -542,7 +537,6 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
 .ft-btm{padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .ft-copy{font-family:'Oswald',sans-serif;font-weight:200;font-size:10px;color:rgba(255,255,255,.16);letter-spacing:.1em;}
 .ft-cert-txt{font-family:'Oswald',sans-serif;font-size:10px;color:var(--gmd);letter-spacing:.1em;opacity:.4;}
-
 @media(max-width:1100px){
   nav{display:none;}
   .logo-texts{display:none;}
@@ -579,7 +573,6 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
   <a href="index.html" class="logo">
     <img src="https://sanwa-3.co.jp/files/libs/562/202310181048352806.jpg?1697593715"
          alt="三和鍍金工業株式会社" class="logo-img">
-  </a>
   <nav>
     <a href="technology.html">めっき技術</a>
     <a href="about.html">会社案内</a>
@@ -610,6 +603,8 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
   <a href="contact.html">採用情報</a>
   <a href="https://sanwa-3.co.jp/pages/5/" target="_blank">お問い合わせ</a>
 </div>
+
+
 <section class="page-hero">
   <div class="page-hero-bar"></div>
   <p class="page-tag">Quality &amp; Environment</p>
@@ -734,7 +729,6 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
         <span class="cb-web-sub">24時間受付・無料・通常2営業日以内に返信</span>
       </div>
       <span class="cb-web-arr">→</span>
-    </a>
     <a href="contact.html" class="cb-web">
       <div class="cb-web-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
       <div class="cb-web-body">
@@ -742,7 +736,6 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
         <span class="cb-web-sub">20代〜50代活躍中・未経験歓迎</span>
       </div>
       <span class="cb-web-arr">→</span>
-    </a>
   </div>
 </section>
 
@@ -787,10 +780,48 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
     <div class="ft-cert-txt">ISO 9001 ／ Eco Action 21 ／ Carbon Offset JCL-400-000-001-101-837</div>
   </div>
 </footer>
+  <a href="https://sanwa-3.co.jp/pages/5/" class="fb-item fb-contact" target="_blank">
+    <span class="fb-icon"></span>
+    <div class="fb-texts">
+      <span class="fb-main">お問い合わせ・お見積り</span>
+      <span class="fb-sub">24時間受付・無料</span>
+    </div>
+  <a href="https://sanwa-3.co.jp/pages/73/" class="fb-item fb-pamphlet" target="_blank">
+    <span class="fb-icon"></span>
+    <div class="fb-texts">
+      <span class="fb-main">会社パンフレット</span>
+      <span class="fb-sub">無料でお申し込み</span>
+    </div>
+  <a href="contact.html" class="fb-item fb-recruit">
+    <span class="fb-icon"></span>
+    <div class="fb-texts">
+      <span class="fb-main">採用情報</span>
+      <span class="fb-sub">未経験歓迎・大阪市内</span>
+    </div>
+</div>
 
-
-
-<!-- FIXED BOTTOM BAR -->
+<script>
+(function(){
+  // フッター年号
+  const y = new Date().getFullYear();
+  const el = document.getElementById('ft-year');
+  if(el) el.textContent = y;
+  // 固定バー
+  const bar = document.getElementById('fixedBar');
+  if(bar){
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 200) bar.classList.add('show');
+    }, {passive:true});
+  }
+  // reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e,i) => {
+      if(e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i*80);
+    });
+  }, {threshold:.06, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
 <div class="fixed-bar" id="fixedBar">
   <a href="tel:0669715833" class="fb-item fb-tel">
     <span class="fb-icon"></span>
@@ -821,52 +852,6 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
     </div>
   </a>
 </div>
-  </a>
-  <a href="https://sanwa-3.co.jp/pages/5/" class="fb-item fb-contact" target="_blank">
-    <span class="fb-icon"></span>
-    <div class="fb-texts">
-      <span class="fb-main">お問い合わせ・お見積り</span>
-      <span class="fb-sub">24時間受付・無料</span>
-    </div>
-  </a>
-  <a href="https://sanwa-3.co.jp/pages/73/" class="fb-item fb-pamphlet" target="_blank">
-    <span class="fb-icon"></span>
-    <div class="fb-texts">
-      <span class="fb-main">会社パンフレット</span>
-      <span class="fb-sub">無料でお申し込み</span>
-    </div>
-  </a>
-  <a href="contact.html" class="fb-item fb-recruit">
-    <span class="fb-icon"></span>
-    <div class="fb-texts">
-      <span class="fb-main">採用情報</span>
-      <span class="fb-sub">未経験歓迎・大阪市内</span>
-    </div>
-  </a>
-</div>
-
-<script>
-(function(){
-  // フッター年号
-  const y = new Date().getFullYear();
-  const el = document.getElementById('ft-year');
-  if(el) el.textContent = y;
-  // 固定バー
-  const bar = document.getElementById('fixedBar');
-  if(bar){
-    window.addEventListener('scroll', function(){
-      if(window.scrollY > 200) bar.classList.add('show');
-    }, {passive:true});
-  }
-  // reveal
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e,i) => {
-      if(e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i*80);
-    });
-  }, {threshold:.06, rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-})();
-</script>
 <script>
 /* ── ハンバーガーメニュー ── */
 (function(){
@@ -889,19 +874,8 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
     }
   });
 })();
-(function(){
-  const io=new IntersectionObserver((entries)=>{
-    entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*80);});
-  },{threshold:.06,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-})();
-(function(){
-  const bar=document.getElementById('fixedBar');
-  if(!bar)return;
-  const show=()=>bar.classList.toggle('show',window.scrollY>300);
-  window.addEventListener('scroll',show,{passive:true});
-  show();
-})();
+(function(){const io=new IntersectionObserver((e)=>{e.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*80);});},{threshold:.06,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));})();
+(function(){const b=document.getElementById('fixedBar');if(!b)return;const s=()=>b.classList.toggle('show',window.scrollY>300);window.addEventListener('scroll',s,{passive:true});s();})();
 </script>
 </body>
 </html>
