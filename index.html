@@ -118,6 +118,36 @@ nav a:hover::after,nav a.act::after{transform:scaleX(1);}
 .btn-hdr:hover{background-position:100% 100%;transform:translateY(-1px);box-shadow:0 1px 0 var(--g3),0 6px 22px rgba(26,102,80,.5);}
 .btn-hdr:active{transform:translateY(1px);}
 
+/* ハンバーガー（モバイルのみ） */
+.hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:40px;height:40px;cursor:pointer;border:none;background:none;padding:8px;flex-shrink:0;
+}
+.hamburger span{display:block;width:22px;height:2px;background:var(--t1);border-radius:1px;transition:transform .28s,opacity .2s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* モバイルドロワー */
+.mobile-nav{
+  display:block;
+  position:fixed;top:72px;left:0;right:0;z-index:899;
+  background:#fff;border-bottom:3px solid var(--g);
+  box-shadow:0 8px 32px rgba(13,30,39,.12);
+  transform:translateY(-8px);opacity:0;
+  transition:transform .25s cubic-bezier(.4,0,.2,1),opacity .2s;
+  pointer-events:none;
+  visibility:hidden;
+}
+.mobile-nav.open{transform:none;opacity:1;pointer-events:auto;visibility:visible;}
+.mobile-nav a{
+  display:block;padding:15px 24px;
+  font-family:'Oswald',sans-serif;font-weight:300;font-size:13px;letter-spacing:.14em;
+  color:var(--t1);border-bottom:1px solid var(--t5);
+  transition:background .15s,color .15s;
+}
+.mobile-nav a:last-child{border-bottom:none;}
+.mobile-nav a:hover{background:var(--glt);color:var(--g);}
+
 /* ════ HERO ════ */
 .hero{
   min-height:100vh;position:relative;overflow:hidden;
@@ -307,6 +337,12 @@ h1.hero-ttl .en{display:block;font-family:'Oswald',sans-serif;font-weight:200;fo
 .lnk::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:var(--gmd);transform:scaleX(.4);transform-origin:left;transition:transform .3s;}
 .lnk:hover::before{transform:scaleX(1);}
 .lnk:hover{color:var(--g2);}
+/* ダーク背景用（Flow/Newsセクション） */
+.lnk-lt{font-family:'Oswald',sans-serif;font-weight:400;font-size:12px;letter-spacing:.22em;color:var(--gmd);text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;position:relative;padding-bottom:5px;}
+.lnk-lt::after{content:'→';font-size:14px;}
+.lnk-lt::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:var(--gmd);transform:scaleX(.4);transform-origin:left;transition:transform .3s;}
+.lnk-lt:hover::before{transform:scaleX(1);}
+.lnk-lt:hover{color:#fff;}
 
 /* ════ SERVICES ════ */
 .services{padding:100px 5vw;background:var(--wh);}
@@ -601,7 +637,7 @@ h1.hero-ttl .en{display:block;font-family:'Oswald',sans-serif;font-weight:200;fo
 .cta-web:hover::after{transform:scaleY(1);}
 
 /* ════ FOOTER ════ */
-footer{background:#070f17;padding:64px 5vw 32px;border-top:1px solid rgba(255,255,255,.04);}
+footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,255,255,.04);}
 .ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);}
 /* ロゴ：白背景JPEGをダーク背景で自然に見せる */
 .ft-logo-wrap{
@@ -730,23 +766,104 @@ body{padding-bottom:64px;}
   .cta-web:last-child{border-bottom:none;}
   .recruit-content{padding:48px 5vw;border-left:none;border-top:1px solid rgba(255,255,255,.07);}
   .co-badge{display:none;}
+  /* co-frameの装飾ボーダーがはみ出すのを防ぐ */
+  .co-frame{padding:0;overflow:hidden;}
+  .co-frame::before,.co-frame::after{display:none;}
   .trust-in{flex-wrap:wrap;}
   .trust-item{flex:0 0 50%;border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:20px 24px;}
   .cv-band-in{grid-template-columns:1fr;}.cv-right{display:none;}
   .news-row{grid-template-columns:110px 84px 1fr;}.na{display:none;}
   .ft-top{grid-template-columns:1fr 1fr;}
   .srv-grid,.prod-grid{grid-template-columns:1fr;}
-  .certs-in{grid-template-columns:repeat(3,1fr);}
+  /* タブレットはCertsを3列 → 2列に */
+  .certs-in{grid-template-columns:repeat(2,1fr);}
+  /* Flowは縦積み */
   .flow-steps{flex-direction:column;gap:2px;}
   .flow-arrow{display:none;}
-  .flow-step{width:100%;}
+  .flow-step{width:100%;flex:none;}
   .hdr-tel-wrap{border-right:none;padding-right:0;margin-right:0;}
+  /* ハンバーガーボタン表示 */
+  .hamburger{display:flex;}
 }
 @media(max-width:640px){
-  .hero-kpis{flex-wrap:wrap;gap:0;}.kpi{padding:12px 16px;flex:0 0 50%;}.kpi:nth-child(2n){border-right:none;}
+  /* ── ヘッダー ── */
+  .hdr-tel-wrap{display:none;}
+  #hdr{padding:0 16px;height:60px;}
+  .logo-img{height:38px;}
+  .btn-hdr{padding:9px 14px;font-size:11px;}
+  .hamburger{display:flex;}
+  .mobile-nav{top:60px;}
+
+  /* ── Hero ── */
+  .hero{padding:calc(60px + 48px) 5vw 10vh;}
+  .scroll-line{display:none;}
+  .slide-dots{right:6px;}
+  .slide-thumbs{display:none;}
+  .hero-wm{display:none;}
+
+  /* KPI 2×2グリッド・フォントをISOと統一 */
+  .hero-kpis{flex-wrap:wrap;gap:0;border-bottom:none;}
+  .kpi{padding:14px 16px;flex:0 0 50%;box-sizing:border-box;border-right:1px solid rgba(255,255,255,.1);}
+  .kpi:first-child{padding-left:16px;} /* デスクトップのpadding-left:0をリセット */
+  .kpi:nth-child(2n){border-right:none;}
+  .kpi:nth-child(n+3){border-top:1px solid rgba(255,255,255,.1);}
+  /* 数字・ISO 全部同じサイズに統一 */
+  .kpi-n{font-size:clamp(36px,9vw,48px);}
+  .kpi-n .unit{font-size:14px;}
+  .kpi-n .iso-num{font-size:clamp(36px,9vw,48px);}
+  .kpi-n .iso-sub{font-size:12px;padding-bottom:4px;}
+  .kpi-l{font-size:9px;}
+
+  /* heroボタン縦積み・全幅 */
+  .hero-btns{flex-direction:column;align-items:stretch;gap:10px;width:100%;}
+  .btn-hero{justify-content:center;text-align:center;}
+  .btn-ghost{text-align:center;justify-content:center;}
+
+  /* ── CVバンド ── */
+  .cv-left{padding:28px 5vw;}
+  .cv-num a{font-size:clamp(24px,7vw,32px);}
+
+  /* ── Services ── */
+  .srv-grid{grid-template-columns:1fr;}
+
+  /* ── Company ── */
+  .co-kpis{grid-template-columns:1fr 1fr;}
+
+  /* ── News ── */
+  .news-row{display:flex;flex-direction:column;gap:6px;align-items:flex-start;padding:16px 12px;}
+  .na{display:none;}
+  .nd{font-size:11px;}
+  .nt{font-size:13px;line-height:1.6;}
+  .cat{font-size:9px;padding:3px 8px;}
+
+  /* ── Trust ── */
   .trust-item{flex:0 0 100%;}
-  .ft-top{grid-template-columns:1fr;}
+
+  /* ── Certs ── */
   .certs-in{grid-template-columns:repeat(2,1fr);}
+  .cert-item{padding:20px 12px;}
+
+  /* ── Flow ── */
+  .flow{padding:64px 4vw;}
+  .flow-hd{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:40px;}
+  .flow-step{padding:24px 18px 28px;}
+
+  /* ── Contact ── */
+  .contact-in{grid-template-columns:1fr;}
+  .cta-tel-num{font-size:clamp(24px,7vw,32px);}
+
+  /* ── Fixed-bar ── */
+  .fixed-bar{height:56px;grid-template-columns:1fr 1fr;}
+  body{padding-bottom:56px;}
+  .fb-pamphlet,.fb-recruit{display:none;}
+  .fb-item{gap:8px;}
+  .fb-main{font-size:12px;}
+  .fb-sub{font-size:10px;}
+  .fb-tel .fb-main{font-size:16px;}
+
+  /* ── Footer ── */
+  .ft-top{grid-template-columns:1fr;}
+  .ft-btm{flex-direction:column;align-items:flex-start;gap:8px;}
 }
 
 /* ── CSS Icons (絵文字置換) ── */
@@ -902,8 +1019,21 @@ body{padding-bottom:64px;}
     </div>
     <a href="contact.html" class="btn-hdr-recruit">採用情報</a>
     <a href="https://sanwa-3.co.jp/pages/5/" class="btn-hdr" target="_blank">お問い合わせ</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+<!-- モバイルドロワーナビ -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="technology.html">めっき技術</a>
+  <a href="about.html">会社案内</a>
+  <a href="equipment.html">設備</a>
+  <a href="quality.html">品質・環境</a>
+  <a href="access.html">アクセス</a>
+  <a href="contact.html">採用情報</a>
+  <a href="https://sanwa-3.co.jp/pages/5/" target="_blank">お問い合わせ</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1160,7 +1290,7 @@ body{padding-bottom:64px;}
       <h2 class="sec-h">お取引の流れ</h2>
       <p class="sec-p" style="margin-top:4px">お問い合わせから納品まで、5つのステップで丁寧に対応いたします。</p>
     </div>
-    <a href="flow.html">詳しく見る</a>
+    <a href="flow.html" class="lnk-lt">詳しく見る</a>
   </div>
   <div class="flow-steps">
     <div class="flow-step">
@@ -1377,6 +1507,28 @@ body{padding-bottom:64px;}
 </div>
 
 <script>
+/* ── ハンバーガーメニュー ── */
+(function(){
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('mobileNav');
+  if(!btn || !nav) return;
+  btn.addEventListener('click', () => {
+    const open = btn.classList.toggle('open');
+    nav.classList.toggle('open', open);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    btn.classList.remove('open');
+    nav.classList.remove('open');
+  }));
+  // ドロワー外タップで閉じる
+  document.addEventListener('click', e => {
+    if(!btn.contains(e.target) && !nav.contains(e.target)){
+      btn.classList.remove('open');
+      nav.classList.remove('open');
+    }
+  });
+})();
+
 /* ── 年数自動計算 ── */
 (function(){
   const FOUNDED = 1952;
