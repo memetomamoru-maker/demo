@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お取引の流れ | 三和鍍金工業株式会社</title>
+<meta name="description" content="三和鍍金工業のお取引の流れをご案内します。お問い合わせからめっき加工納品まで、5つのステップで丁寧にご対応いたします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Bebas+Neue&family=Oswald:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g:#1a6650;--g2:#124d3c;--g3:#0e3d2e;
+  --glt:#e6f2ee;--gmd:#a8d4c5;--gbright:#2aaa84;
+  --navy:#0d1e27;--navy2:#152030;
+  --wh:#fff;--off:#f4f6f5;
+  --t1:#1a2d35;--t2:#3c5260;--t3:#7a9198;--t4:#b0c4cb;--t5:#dde8eb;
+  --gold:#c4963a;
+  --fs:0 2px 8px rgba(13,30,39,.08);
+  --fm:0 6px 32px rgba(13,30,39,.14);
+  --fl:0 20px 60px rgba(13,30,39,.22);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--off);color:var(--t1);overflow-x:hidden;line-height:1.75;padding-bottom:64px;}
+img{display:block;max-width:100%}
+a{text-decoration:none}
+
+/* ════ HEADER ════ */
+#hdr{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  height:72px;padding:0 5vw;
+  display:flex;align-items:center;justify-content:space-between;
+  background:#fff;
+  border-bottom:1px solid var(--t5);
+  box-shadow:0 2px 16px rgba(13,30,39,.07);
+}
+.logo{display:flex;align-items:center;text-decoration:none;}
+.logo-img{height:58px;width:auto;display:block;}
+nav{display:flex;gap:28px;align-items:center;}
+nav a{font-family:'Oswald',sans-serif;font-weight:400;font-size:13px;letter-spacing:.14em;color:var(--t1);text-transform:uppercase;transition:color .2s;position:relative;}
+nav a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:2px;background:var(--g);transform:scaleX(0);transition:transform .25s;}
+nav a:hover,nav a.act{color:var(--g);}
+nav a:hover::after,nav a.act::after{transform:scaleX(1);}
+.hdr-r{display:flex;align-items:center;gap:12px;}
+.hdr-tel-wrap{display:flex;flex-direction:column;align-items:flex-end;border-right:1px solid var(--t5);padding-right:12px;margin-right:4px;}
+.hdr-tel-sub{font-size:9px;color:var(--t3);letter-spacing:.06em;margin-bottom:2px;}
+.hdr-tel{font-family:'Oswald',sans-serif;font-weight:600;font-size:17px;color:var(--t1);display:flex;align-items:center;gap:5px;text-decoration:none;}
+.hdr-tel i{font-style:normal;font-size:0;display:inline-block;width:14px;height:14px;background:no-repeat center/contain;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a6650' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z'/%3E%3C/svg%3E");}
+.btn-hdr{background:linear-gradient(135deg,var(--g),var(--gbright));color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;padding:9px 18px;text-decoration:none;transition:opacity .2s;}
+.btn-hdr:hover{opacity:.85;}
+.btn-hdr-recruit{background:transparent;border:1.5px solid var(--g);color:var(--g);font-size:11px;font-weight:700;letter-spacing:.1em;padding:8px 16px;text-decoration:none;transition:background .2s;}
+.btn-hdr-recruit:hover{background:var(--glt);}
+
+/* ════ PAGE HERO ════ */
+.page-hero{
+  padding:calc(72px + 56px) 5vw 64px;
+  background:var(--navy);
+  position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(26,102,80,.18) 0%,transparent 60%);
+  pointer-events:none;
+}
+.page-hero-bg-text{
+  position:absolute;right:-2vw;bottom:-0.15em;
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(100px,20vw,280px);
+  color:rgba(255,255,255,.025);letter-spacing:-.02em;user-select:none;pointer-events:none;line-height:1;
+}
+.page-hero-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--g),var(--gbright));}
+.page-tag{
+  font-family:'Oswald',sans-serif;font-weight:300;font-size:11px;
+  letter-spacing:.42em;color:var(--gmd);text-transform:uppercase;
+  margin-bottom:18px;display:flex;align-items:center;gap:14px;
+}
+.page-tag::before{content:'';display:block;width:32px;height:1px;background:var(--gmd);}
+.page-title{
+  font-family:'Noto Serif JP',serif;font-weight:700;
+  font-size:clamp(32px,5vw,60px);line-height:1.2;
+  letter-spacing:.04em;color:#fff;
+}
+.page-sub{font-size:15px;color:rgba(255,255,255,.58);margin-top:16px;max-width:560px;line-height:2.1;}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-top:32px;font-size:12px;color:rgba(255,255,255,.4);}
+.breadcrumb a{color:rgba(255,255,255,.4);transition:color .2s;}
+.breadcrumb a:hover{color:var(--gmd);}
+.breadcrumb span{color:rgba(255,255,255,.6);}
+
+/* ════ SECTION UTILS ════ */
+.sec-wrap{padding:80px 5vw;}
+.sec-wrap.bg-off{background:var(--off);}
+.sec-wrap.bg-wh{background:var(--wh);}
+.sec-wrap.bg-navy{background:var(--navy);}
+.eyebrow{font-family:'Oswald',sans-serif;font-weight:300;font-size:11px;letter-spacing:.4em;color:var(--g);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.eyebrow::before{content:'';display:block;width:28px;height:2px;background:linear-gradient(to right,var(--g),var(--gbright));}
+.sec-h{font-family:'Noto Serif JP',serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.28;letter-spacing:.04em;color:var(--navy);margin-bottom:18px;}
+.sec-p{font-size:16px;color:var(--t2);line-height:2.1;max-width:600px;}
+
+/* ════ FLOW STEPS ════ */
+.flow-intro{max-width:720px;margin:0 auto 72px;text-align:center;}
+.flow-intro .eyebrow{justify-content:center;}
+.flow-intro .eyebrow::before{display:none;}
+.flow-intro .sec-h{text-align:center;}
+.flow-intro .sec-p{text-align:center;margin:0 auto;}
+
+.flow-steps-vert{display:flex;flex-direction:column;gap:0;max-width:860px;margin:0 auto;}
+
+.flow-card{
+  display:grid;grid-template-columns:80px 1fr;gap:0;
+  position:relative;
+}
+.flow-card:not(:last-child)::after{
+  content:'';position:absolute;left:40px;top:80px;bottom:-1px;
+  width:2px;background:linear-gradient(to bottom,var(--g) 0%,var(--gmd) 60%,rgba(168,212,197,.2) 100%);
+  transform:translateX(-50%);
+}
+.flow-left{
+  display:flex;flex-direction:column;align-items:center;
+  padding-top:8px;
+}
+.flow-num-circle{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--g2),var(--g));
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  box-shadow:0 4px 16px rgba(26,102,80,.3);
+  position:relative;z-index:1;
+}
+.flow-num-circle span{
+  font-family:'Bebas Neue',sans-serif;font-size:22px;
+  color:#fff;letter-spacing:.04em;line-height:1;
+}
+.flow-right{
+  padding:0 0 56px 32px;
+}
+.flow-card:last-child .flow-right{padding-bottom:8px;}
+.flow-en-label{
+  font-family:'Oswald',sans-serif;font-weight:300;font-size:10px;
+  letter-spacing:.4em;color:var(--g);text-transform:uppercase;
+  margin-bottom:10px;margin-top:12px;
+}
+.flow-name{
+  font-family:'Noto Serif JP',serif;font-weight:700;
+  font-size:clamp(20px,2.4vw,28px);letter-spacing:.04em;
+  color:var(--navy);margin-bottom:16px;line-height:1.3;
+}
+.flow-body{
+  background:var(--wh);
+  border-left:3px solid var(--g);
+  padding:24px 28px;
+  box-shadow:var(--fs);
+}
+.flow-body p{font-size:15px;color:var(--t2);line-height:2.0;}
+.flow-body .flow-note{
+  margin-top:16px;padding-top:16px;
+  border-top:1px solid var(--t5);
+  font-size:13px;color:var(--t3);
+  display:flex;align-items:flex-start;gap:8px;
+}
+.flow-body .flow-note::before{
+  content:'';flex-shrink:0;width:16px;height:16px;margin-top:2px;
+  background:no-repeat center/contain;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a6650' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='8' x2='12' y2='12'/%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'/%3E%3C/svg%3E");
+}
+.flow-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;letter-spacing:.08em;
+  color:var(--g);background:var(--glt);
+  padding:4px 12px;margin-bottom:12px;
+}
+
+/* online badge */
+.badge-online{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;letter-spacing:.06em;
+  color:#fff;background:var(--g);
+  padding:3px 10px;vertical-align:middle;margin-left:10px;
+  font-family:'Oswald',sans-serif;
+}
+
+/* ════ FAQ BAND ════ */
+.faq-band{background:var(--navy2);padding:80px 5vw;}
+.faq-band .eyebrow{color:var(--gmd);}
+.faq-band .eyebrow::before{background:linear-gradient(to right,var(--gmd),rgba(255,255,255,.2));}
+.faq-band .sec-h{color:#fff;}
+.faq-list{max-width:760px;margin-top:48px;display:flex;flex-direction:column;gap:2px;}
+.faq-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);}
+.faq-q{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:22px 24px;cursor:pointer;
+  font-size:15px;font-weight:700;color:#fff;
+  transition:background .2s;
+}
+.faq-q:hover{background:rgba(255,255,255,.07);}
+.faq-q-mark{
+  flex-shrink:0;width:28px;height:28px;border-radius:50%;
+  background:var(--g);display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;color:#fff;
+  margin-top:1px;
+}
+.faq-a{padding:0 24px 22px calc(24px + 28px + 16px);font-size:14px;color:rgba(255,255,255,.62);line-height:2.0;}
+
+/* ════ CONTACT BAND ════ */
+.contact-band{padding:0;background:var(--navy2);position:relative;overflow:hidden;}
+.contact-top{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.08);}
+.contact-top-l{padding:64px 5vw;border-right:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:center;}
+.contact-top-l .cb-eyebrow{font-family:'Oswald',sans-serif;font-weight:300;font-size:10px;letter-spacing:.38em;color:var(--gmd);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.contact-top-l .cb-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gmd);}
+.contact-top-l h2{font-family:'Noto Serif JP',serif;font-weight:700;font-size:clamp(24px,3vw,38px);line-height:1.3;letter-spacing:.04em;color:#fff;margin-bottom:16px;}
+.contact-top-l p{font-size:14px;color:rgba(255,255,255,.6);line-height:2.1;}
+.contact-hours{margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);}
+.contact-hours-num{font-family:'Oswald',sans-serif;font-weight:500;font-size:22px;color:#fff;letter-spacing:.06em;}
+.contact-hours-meta{font-size:12px;color:rgba(255,255,255,.4);margin-top:4px;}
+.contact-top-r{padding:48px 5vw;display:flex;flex-direction:column;justify-content:center;gap:16px;}
+.cb-tel-lbl{font-family:'Oswald',sans-serif;font-weight:300;font-size:10px;letter-spacing:.38em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:6px;}
+.cb-tel-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,52px);color:#fff;display:flex;align-items:center;gap:10px;letter-spacing:.04em;}
+.cb-tel-num i{font-style:normal;font-size:0;display:inline-block;width:.6em;height:.6em;background:no-repeat center/contain;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232aaa84' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z'/%3E%3C/svg%3E");}
+.cb-tel-num a{color:inherit;}
+.cb-tel-meta{font-size:12px;color:rgba(255,255,255,.4);margin-top:6px;}
+.contact-bottom{display:grid;grid-template-columns:1fr 1fr;}
+.cb-web{display:flex;align-items:center;justify-content:space-between;padding:28px 5vw;background:rgba(255,255,255,.04);border-right:1px solid rgba(255,255,255,.06);color:#fff;transition:background .2s;}
+.cb-web:last-child{border-right:none;}
+.cb-web:hover{background:rgba(255,255,255,.08);}
+.cb-web-icon{width:36px;height:36px;flex-shrink:0;margin-right:18px;}
+.cb-web-icon svg{width:100%;height:100%;fill:none;stroke:var(--gmd);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.cb-web-body{display:flex;flex-direction:column;gap:4px;flex:1;}
+.cb-web-label{font-size:14px;font-weight:700;color:#fff;letter-spacing:.04em;}
+.cb-web-sub{font-size:12px;color:rgba(255,255,255,.45);}
+.cb-web-arr{font-size:18px;color:var(--gmd);transition:transform .2s;flex-shrink:0;margin-left:12px;}
+.cb-web:hover .cb-web-arr{transform:translateX(5px);}
+
+/* ════ FOOTER ════ */
+footer{background:#070f17;padding:64px 5vw 32px;border-top:1px solid rgba(255,255,255,.04);}
+.ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.ft-logo-wrap{margin-bottom:16px;}
+.ft-logo{height:48px;width:auto;filter:brightness(.85);}
+.ft-name{font-family:'Noto Serif JP',serif;font-weight:700;font-size:15px;color:rgba(255,255,255,.8);margin-bottom:8px;letter-spacing:.06em;}
+.ft-addr{font-size:12px;color:rgba(255,255,255,.38);line-height:2.0;}
+.ft-col h4{font-family:'Oswald',sans-serif;font-weight:400;font-size:12px;letter-spacing:.3em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:20px;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:12px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.ft-col a{font-size:13px;color:rgba(255,255,255,.5);transition:color .2s;}
+.ft-col a:hover{color:var(--gmd);}
+.ft-btm{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.07);padding-top:24px;flex-wrap:wrap;gap:8px;}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.3);}
+.ft-cert-txt{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.04em;}
+
+/* ════ FIXED BOTTOM BAR ════ */
+.fixed-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:800;
+  display:grid;grid-template-columns:1.2fr 1.6fr 1fr 1fr;
+  height:64px;transform:translateY(100%);transition:transform .35s cubic-bezier(.19,1,.22,1);
+}
+.fixed-bar.show{transform:translateY(0);}
+.fb-item{display:flex;align-items:center;justify-content:center;gap:10px;padding:0 16px;text-decoration:none;transition:opacity .2s;}
+.fb-item:hover{opacity:.85;}
+.fb-tel{background:var(--g);color:#fff;}
+.fb-contact{background:var(--navy);color:#fff;border-left:1px solid rgba(255,255,255,.1);}
+.fb-pamphlet{background:var(--navy2);color:#fff;border-left:1px solid rgba(255,255,255,.08);}
+.fb-recruit{background:var(--off);color:var(--t1);border-left:1px solid var(--t5);}
+.fb-icon{width:18px;height:18px;flex-shrink:0;background:no-repeat center/contain;}
+.fb-tel .fb-icon{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z'/%3E%3C/svg%3E");}
+.fb-contact .fb-icon{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Cpolyline points='2,4 12,13 22,4'/%3E%3C/svg%3E");}
+.fb-pamphlet .fb-icon{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a8d4c5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='16' y1='13' x2='8' y2='13'/%3E%3Cline x1='16' y1='17' x2='8' y2='17'/%3E%3C/svg%3E");}
+.fb-recruit .fb-icon{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a6650' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");}
+.fb-texts{display:flex;flex-direction:column;}
+.fb-main{font-size:13px;font-weight:700;letter-spacing:.04em;}
+.fb-sub{font-size:10px;opacity:.6;letter-spacing:.04em;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ════ RESPONSIVE ════ */
+@media(max-width:1100px){
+  nav{display:none;}
+  .hdr-tel-sub{display:none;}
+  .btn-hdr-recruit{display:none;}
+  .contact-top{grid-template-columns:1fr;}
+  .contact-top-l{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);}
+  .contact-bottom{grid-template-columns:1fr;}
+  .cb-web{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);}
+  .ft-top{grid-template-columns:1fr 1fr;}
+  .fixed-bar{grid-template-columns:1fr 1fr;}
+  .fixed-bar .fb-pamphlet,.fixed-bar .fb-recruit{display:none;}
+}
+@media(max-width:640px){
+  .flow-card{grid-template-columns:56px 1fr;}
+  .flow-num-circle{width:44px;height:44px;}
+  .flow-num-circle span{font-size:18px;}
+  .flow-card:not(:last-child)::after{left:28px;}
+  .ft-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <a href="index.html" class="logo">
+    <img src="https://sanwa-3.co.jp/files/libs/562/202310181048352806.jpg?1697593715"
+         alt="三和鍍金工業株式会社" class="logo-img">
+  </a>
+  <nav>
+    <a href="technology.html">めっき技術</a>
+    <a href="about.html">会社案内</a>
+    <a href="equipment.html">設備</a>
+    <a href="quality.html">品質・環境</a>
+    <a href="flow.html">お取引の流れ</a>
+    <a href="access.html">アクセス</a>
+  </nav>
+  <div class="hdr-r">
+    <div class="hdr-tel-wrap">
+      <span class="hdr-tel-sub">お見積り・お問い合わせはこちらから</span>
+      <a href="tel:0669715833" class="hdr-tel"><i>☎</i>06-6971-5833</a>
+    </div>
+    <a href="contact.html" class="btn-hdr-recruit">採用情報</a>
+    <a href="https://sanwa-3.co.jp/pages/5/" class="btn-hdr" target="_blank">お問い合わせ</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg-text">PROCESS</div>
+  <div class="page-tag">Flow of Transaction</div>
+  <h1 class="page-title">お取引の流れ</h1>
+  <p class="page-sub">お問い合わせから納品まで、5つのステップで丁寧にご対応いたします。はじめてのご依頼でも安心してお任せください。</p>
+  <nav class="breadcrumb">
+    <a href="index.html">TOP</a>
+    <span>›</span>
+    <span>お取引の流れ</span>
+  </nav>
+  <div class="page-hero-bar"></div>
+</section>
+
+<!-- FLOW STEPS -->
+<section class="sec-wrap bg-off reveal">
+  <div class="flow-intro">
+    <p class="eyebrow">Process</p>
+    <h2 class="sec-h">はじめてのご依頼も<br>スムーズにご対応します</h2>
+    <p class="sec-p">お見積もりは無料。図面や仕様書がなくてもご相談いただけます。まずはお気軽にお問い合わせください。</p>
+  </div>
+
+  <div class="flow-steps-vert">
+
+    <!-- STEP 1 -->
+    <div class="flow-card reveal">
+      <div class="flow-left">
+        <div class="flow-num-circle"><span>1</span></div>
+      </div>
+      <div class="flow-right">
+        <div class="flow-en-label">Contact</div>
+        <h2 class="flow-name">お問い合わせ</h2>
+        <div class="flow-body">
+          <p>めっき加工のご見積りをご希望の際は、お問い合わせフォームまたはお電話にてご連絡ください。正確・迅速なお見積もりのために、以下の情報をお知らせいただけますと幸いです。</p>
+          <div class="flow-note">製品の材質 ／ 表面処理の種類 ／ 希望納期 ／ 1ヶ月あたりの加工ロット数 ／ バレル・ラックの選択。図面を添付いただくと、より詳細なご提案が可能です。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="flow-card reveal">
+      <div class="flow-left">
+        <div class="flow-num-circle"><span>2</span></div>
+      </div>
+      <div class="flow-right">
+        <div class="flow-en-label">Meeting</div>
+        <h2 class="flow-name">お打ち合わせ</h2>
+        <div class="flow-body">
+          <p>お見積もりの詳細について、お客様のニーズに合わせた最適なサービスをご提案いたします。加工の種類・材質・サイズ・数量・品質要求・納期など、具体的なご要望をお聞かせください。</p>
+          <div class="flow-note">遠方・ご多忙の方にはオンライン会議（Zoom・Teams）にも対応しております。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="flow-card reveal">
+      <div class="flow-left">
+        <div class="flow-num-circle"><span>3</span></div>
+      </div>
+      <div class="flow-right">
+        <div class="flow-en-label">Estimate & Trial</div>
+        <h2 class="flow-name">お見積り・試作</h2>
+        <div class="flow-body">
+          <p>約5営業日以内にPDF・FAX・郵送にてお見積書をお届けします。めっきの試作についても承っております。お電話でのお問い合わせの際は、メールにてご連絡先をお知らせください。</p>
+          <div class="flow-note">三価クロメートは「三価白」と「三価黄色」があります。ご依頼の際には希望の種類を明記ください。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="flow-card reveal">
+      <div class="flow-left">
+        <div class="flow-num-circle"><span>4</span></div>
+      </div>
+      <div class="flow-right">
+        <div class="flow-en-label">Order & Processing</div>
+        <h2 class="flow-name">ご発注・加工</h2>
+        <div class="flow-body">
+          <p>製品が到着次第、速やかにめっき加工を開始いたします。注文書をご用意いただいた後、弊社にて現品票と作業指図書を発行します。</p>
+          <div class="flow-note">フォークリフト・ドラム反転機を完備。ワゴン車・パレット・半ドラムなど、さまざまな形態での製品持ち込みに対応しています。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="flow-card reveal">
+      <div class="flow-left">
+        <div class="flow-num-circle"><span>5</span></div>
+      </div>
+      <div class="flow-right">
+        <div class="flow-en-label">Delivery</div>
+        <h2 class="flow-name">検品・納品</h2>
+        <div class="flow-body">
+          <p>出荷検査が完了した製品からご連絡いたします。ISO9001に基づく品質管理体制のもと、安定した品質でお届けします。</p>
+          <div class="flow-note">継続的なお取引では、お客様のロットサイズ・納期サイクルに合わせた生産計画にも対応いたします。</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-band reveal">
+  <p class="eyebrow">FAQ</p>
+  <h2 class="sec-h wh" style="color:#fff;margin-bottom:8px;">よくあるご質問</h2>
+  <p style="font-size:14px;color:rgba(255,255,255,.5);margin-bottom:0;">はじめてのご依頼で多いご質問をまとめました。</p>
+  <div class="faq-list" style="margin-top:48px;">
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>小ロットでも対応できますか？</div>
+      <div class="faq-a">はい、小ロットにも対応しています。少量品はダミー品と混合して加工することで対応可能です。まずはご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>見積もりに図面は必ず必要ですか？</div>
+      <div class="faq-a">図面がなくてもお見積りは可能です。ただし、製品の材質・サイズ・希望する処理の種類などをお知らせいただけると、より正確なご提案ができます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>納期はどれくらいかかりますか？</div>
+      <div class="faq-a">加工内容・数量・時期によって異なりますが、一般的な加工で受注後3〜5営業日程度です。お急ぎの場合はご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>遠方からでも依頼できますか？</div>
+      <div class="faq-a">はい、全国からご依頼を受け付けています。製品の発送・返送にも対応しています。まずはお問い合わせフォームよりご連絡ください。</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT BAND -->
+<section class="contact-band reveal">
+  <div class="contact-top">
+    <div class="contact-top-l">
+      <p class="cb-eyebrow">Contact</p>
+      <h2>めっき加工の<br>ご相談・お見積り</h2>
+      <p>素材・形状・ロット数・ご要望など、まずはお気軽にご連絡ください。担当者が最適な加工方法をご提案いたします。</p>
+      <div class="contact-hours">
+        <div class="contact-hours-num">平日 8:00 — 16:45</div>
+        <div class="contact-hours-meta">土・日・祝日・年末年始 休業</div>
+      </div>
+    </div>
+    <div class="contact-top-r">
+      <div class="cb-tel-lbl">お電話でのお問い合わせ</div>
+      <div class="cb-tel-num"><i></i><a href="tel:0669715833">06-6971-5833</a></div>
+      <div class="cb-tel-meta">FAX: 06-6974-7838　／　平日 8:00〜16:45</div>
+    </div>
+  </div>
+  <div class="contact-bottom">
+    <a href="https://sanwa-3.co.jp/pages/5/" class="cb-web" target="_blank">
+      <div class="cb-web-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
+      <div class="cb-web-body">
+        <span class="cb-web-label">Webフォームからお問い合わせ</span>
+        <span class="cb-web-sub">24時間受付・無料・通常2営業日以内に返信</span>
+      </div>
+      <span class="cb-web-arr">→</span>
+    </a>
+    <a href="contact.html" class="cb-web">
+      <div class="cb-web-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div class="cb-web-body">
+        <span class="cb-web-label">採用情報を見る</span>
+        <span class="cb-web-sub">20代〜50代活躍中・未経験歓迎</span>
+      </div>
+      <span class="cb-web-arr">→</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo-wrap">
+        <img src="https://sanwa-3.co.jp/files/libs/562/202310181048352806.jpg?1697593715"
+             alt="三和鍍金工業株式会社" class="ft-logo">
+      </div>
+      <div class="ft-name">三和鍍金工業株式会社</div>
+      <div class="ft-addr">〒537-0002 大阪府大阪市東成区深江南2-1-23<br>TEL: 06-6971-5833　FAX: 06-6974-7838<br>平日 8:00〜16:45</div>
+    </div>
+    <div class="ft-col"><h4>めっき技術</h4><ul>
+      <li><a href="technology.html">亜鉛-高ニッケル合金めっき</a></li>
+      <li><a href="technology.html">ニッケル・クロムめっき</a></li>
+      <li><a href="technology.html">亜鉛めっき</a></li>
+      <li><a href="products.html">製品事例</a></li>
+      <li><a href="flow.html">お取引の流れ</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>会社情報</h4><ul>
+      <li><a href="about.html">会社案内・企業理念</a></li>
+      <li><a href="equipment.html">主要設備</a></li>
+      <li><a href="quality.html">品質・環境への取り組み</a></li>
+      <li><a href="access.html">アクセス</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>採用・その他</h4><ul>
+      <li><a href="contact.html">採用情報</a></li>
+      <li><a href="https://sanwa-3.co.jp/pages/5/" target="_blank">お問い合わせ</a></li>
+      <li><a href="privacy.html">個人情報保護方針</a></li>
+      <li><a href="sitepolicy.html">サイトポリシー</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-btm">
+    <div class="ft-copy">© <span id="ft-year"></span> Sanwa Plating Industry Co., Ltd. All Rights Reserved.</div>
+    <div class="ft-cert-txt">ISO 9001 ／ Eco Action 21 ／ Carbon Offset JCL-400-000-001-101-837</div>
+  </div>
+</footer>
+
+<div class="fixed-bar" id="fixedBar">
+  <a href="tel:0669715833" class="fb-item fb-tel">
+    <span class="fb-icon"></span>
+    <div class="fb-texts"><span class="fb-main">06-6971-5833</span><span class="fb-sub">平日 8:00〜16:45</span></div>
+  </a>
+  <a href="https://sanwa-3.co.jp/pages/5/" class="fb-item fb-contact" target="_blank">
+    <span class="fb-icon"></span>
+    <div class="fb-texts"><span class="fb-main">お問い合わせ・お見積り</span><span class="fb-sub">24時間受付・無料</span></div>
+  </a>
+  <a href="https://sanwa-3.co.jp/pages/73/" class="fb-item fb-pamphlet" target="_blank">
+    <span class="fb-icon"></span>
+    <div class="fb-texts"><span class="fb-main">会社パンフレット</span><span class="fb-sub">無料でお申し込み</span></div>
+  </a>
+  <a href="contact.html" class="fb-item fb-recruit">
+    <span class="fb-icon"></span>
+    <div class="fb-texts"><span class="fb-main">採用情報</span><span class="fb-sub">未経験歓迎・大阪市内</span></div>
+  </a>
+</div>
+
+<script>
+(function(){
+  const y = new Date().getFullYear();
+  const el = document.getElementById('ft-year');
+  if(el) el.textContent = y;
+  const bar = document.getElementById('fixedBar');
+  if(bar){
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 200) bar.classList.add('show');
+    }, {passive:true});
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e,i) => {
+      if(e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i*80);
+    });
+  }, {threshold:.06, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>
