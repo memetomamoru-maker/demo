@@ -950,6 +950,151 @@ body{padding-bottom:64px;}
 
 /* ════ PAGE SPECIFIC ════ */
 
+
+/
+.breadcrumb a{
+color:rgba(255,255,255,.4);transition:color .2s;
+}
+.breadcrumb a:hover{
+color:var(--gmd);
+}
+.breadcrumb span{
+color:rgba(255,255,255,.6);
+}
+/
+.flow-intro .eyebrow{
+justify-content:center;
+}
+.flow-intro .eyebrow::before{
+display:none;
+}
+.flow-intro .sec-h{
+text-align:center;
+}
+.flow-intro .sec-p{
+text-align:center;margin:0 auto;
+}
+.flow-steps-vert{
+display:flex;flex-direction:column;gap:0;max-width:860px;margin:0 auto;
+}
+.flow-card{
+display:grid;grid-template-columns:80px 1fr;gap:0;
+  position:relative;
+}
+.flow-card:not(:last-child)::after{
+content:'';position:absolute;left:40px;top:80px;bottom:-1px;
+  width:2px;background:linear-gradient(to bottom,var(--g) 0%,var(--gmd) 60%,rgba(168,212,197,.2) 100%);
+  transform:translateX(-50%);
+}
+.flow-left{
+display:flex;flex-direction:column;align-items:center;
+  padding-top:8px;
+}
+.flow-num-circle{
+width:56px;height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--g2),var(--g));
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  box-shadow:0 4px 16px rgba(26,102,80,.3);
+  position:relative;z-index:1;
+}
+.flow-num-circle span{
+font-family:'Bebas Neue',sans-serif;font-size:22px;
+  color:#fff;letter-spacing:.04em;line-height:1;
+}
+.flow-right{
+padding:0 0 56px 32px;
+}
+.flow-card:last-child .flow-right{
+padding-bottom:8px;
+}
+.flow-en-label{
+font-family:'Oswald',sans-serif;font-weight:300;font-size:10px;
+  letter-spacing:.4em;color:var(--g);text-transform:uppercase;
+  margin-bottom:10px;margin-top:12px;
+}
+.flow-
+.flow-body p{
+font-size:15px;color:var(--t2);line-height:2.0;
+}
+.flow-body .flow-note{
+margin-top:16px;padding-top:16px;
+  border-top:1px solid var(--t5);
+  font-size:13px;color:var(--t3);
+  display:flex;align-items:flex-start;gap:8px;
+}
+.flow-body .flow-note::before{
+content:'';flex-shrink:0;width:16px;height:16px;margin-top:2px;
+  background:no-repeat center/contain;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a6650' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='8' x2='12' y2='12'/%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'/%3E%3C/svg%3E");
+}
+.flow-tag{
+display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;letter-spacing:.08em;
+  color:var(--g);background:var(--glt);
+  padding:4px 12px;margin-bottom:12px;
+}
+/
+/
+.faq-band .eyebrow{
+color:var(--gmd);
+}
+.faq-band .eyebrow::before{
+background:linear-gradient(to right,var(--gmd),rgba(255,255,255,.2));
+}
+.faq-band .sec-h{
+color:#fff;
+}
+.faq-list{
+max-width:760px;margin-top:48px;display:flex;flex-direction:column;gap:2px;
+}
+.faq-item{
+background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+}
+.faq-q{
+display:flex;align-items:flex-start;gap:16px;
+  padding:22px 24px;cursor:pointer;
+  font-size:15px;font-weight:700;color:#fff;
+  transition:background .2s;
+}
+.faq-q:hover{
+background:rgba(255,255,255,.07);
+}
+.faq-q-mark{
+flex-shrink:0;width:28px;height:28px;border-radius:50%;
+  background:var(--g);display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;color:#fff;
+  margin-top:1px;
+}
+.faq-a{
+padding:0 24px 22px calc(24px + 28px + 16px);font-size:14px;color:rgba(255,255,255,.62);line-height:2.0;
+}
+.contact-top-l .cb-eyebrow{
+font-family:'Oswald',sans-serif;font-weight:300;font-size:10px;letter-spacing:.38em;color:var(--gmd);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:20px;
+}
+.contact-top-l .cb-eyebrow::before{
+content:'';display:block;width:28px;height:1px;background:var(--gmd);
+}
+
+
+
+.fixed-bar.show{
+transform:translateY(0);
+}
+
+.flow-card{
+grid-template-columns:56px 1fr;
+}
+.flow-num-circle{
+width:44px;height:44px;
+}
+.flow-num-circle span{
+font-size:18px;
+}
+.flow-card:not(:last-child)::after{
+left:28px;
+}
 </style>
 </head>
 <body>
