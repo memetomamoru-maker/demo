@@ -233,12 +233,71 @@ nav a:hover,nav a.active{color:var(--g);border-color:var(--g);}
 .tech-section{padding:100px 5vw;border-bottom:1px solid var(--t5);}
 .tech-section:nth-child(odd){background:var(--wh);}
 .tech-section:nth-child(even){background:var(--glt);}
-.tech-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1100px;margin:0 auto;}
+.tech-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start;max-width:1200px;margin:0 auto;}
 .tech-section:nth-child(even) .tech-inner{direction:rtl;}
 .tech-section:nth-child(even) .tech-inner>*{direction:ltr;}
-.tech-img-wrap{position:relative;}
-.tech-img-wrap img{width:100%;height:360px;object-fit:cover;display:block;background:var(--glt);}
-.tech-img-label{position:absolute;top:0;left:0;background:var(--g);color:#fff;font-family:'Oswald',sans-serif;font-weight:300;font-size:10px;letter-spacing:.28em;padding:7px 14px;text-transform:uppercase;}
+
+/* 写真エリア：演出強化 */
+.tech-img-wrap{position:relative;flex-shrink:0;}
+.tech-img-frame{
+  position:relative;
+  background:var(--navy2);
+  overflow:hidden;
+}
+/* グリッドデコレーション */
+.tech-img-frame::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background-image:linear-gradient(rgba(168,212,197,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(168,212,197,.06) 1px,transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+}
+/* 斜めアクセント */
+.tech-img-frame::after{
+  content:'';position:absolute;
+  bottom:-40px;right:-40px;
+  width:140px;height:140px;
+  border:2px solid rgba(168,212,197,.15);
+  transform:rotate(45deg);
+  pointer-events:none;
+  z-index:1;
+}
+.tech-img-frame img{
+  width:100%;height:420px;
+  object-fit:contain;
+  display:block;
+  position:relative;z-index:2;
+  padding:32px;
+  box-sizing:border-box;
+  transition:transform .6s cubic-bezier(.4,0,.2,1);
+}
+.tech-img-wrap:hover .tech-img-frame img{transform:scale(1.03);}
+
+/* 写真下の技術数値バー */
+.tech-img-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--t5);margin-top:0;
+}
+.tech-img-stat{
+  padding:14px 16px;text-align:center;
+  border-right:1px solid var(--t5);
+}
+.tech-img-stat:last-child{border-right:none;}
+.tech-img-stat-val{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;color:var(--g);
+  letter-spacing:.04em;line-height:1;
+  margin-bottom:4px;
+}
+.tech-img-stat-lbl{font-size:10px;color:var(--t3);letter-spacing:.06em;}
+
+.tech-img-label{
+  position:absolute;top:0;left:0;z-index:10;
+  background:var(--g);color:#fff;
+  font-family:'Oswald',sans-serif;font-weight:300;
+  font-size:10px;letter-spacing:.28em;
+  padding:7px 16px;text-transform:uppercase;
+}
 .tech-spec-table{width:100%;border-collapse:collapse;margin-top:28px;font-size:12px;}
 .tech-spec-table th{background:var(--g);color:#fff;font-weight:500;padding:10px 14px;text-align:left;letter-spacing:.05em;font-family:'Noto Sans JP',sans-serif;}
 .tech-spec-table td{padding:10px 14px;border-bottom:1px solid var(--t5);color:var(--t2);}
@@ -783,7 +842,14 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
   <div class="tech-inner">
     <div class="tech-img-wrap">
       <div class="tech-img-label">01 / Zinc-Ni Alloy</div>
-      <img src="https://sanwa-3.co.jp/files/libs/605/t/20231019104828889.jpg" alt="亜鉛-高ニッケル合金めっき" onerror="this.src='';this.alt='亜鉛-高ニッケル合金めっき'">
+      <div class="tech-img-frame">
+        <img src="https://sanwa-3.co.jp/files/libs/605/t/20231019104828889.jpg" alt="亜鉛-高ニッケル合金めっき" onerror="this.style.display='none'">
+      </div>
+      <div class="tech-img-stats">
+        <div class="tech-img-stat"><div class="tech-img-stat-val">SST 1000h+</div><div class="tech-img-stat-lbl">耐食性</div></div>
+        <div class="tech-img-stat"><div class="tech-img-stat-val">200℃</div><div class="tech-img-stat-lbl">耐熱性</div></div>
+        <div class="tech-img-stat"><div class="tech-img-stat-val">Hv400+</div><div class="tech-img-stat-lbl">耐摩耗性</div></div>
+      </div>
     </div>
     <div>
       <div class="sec-label">Feature 01</div>
@@ -829,7 +895,14 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
   <div class="tech-inner">
     <div class="tech-img-wrap">
       <div class="tech-img-label">02 / Nickel-Chrome</div>
-      <img src="https://sanwa-3.co.jp/files/libs/604/t/20231019104821833.jpg" alt="ニッケル・クロムめっき" onerror="this.src='';this.alt='ニッケル・クロムめっき'">
+      <div class="tech-img-frame">
+        <img src="https://sanwa-3.co.jp/files/libs/604/t/20231019104821833.jpg" alt="ニッケル・クロムめっき" onerror="this.style.display='none'">
+      </div>
+      <div class="tech-img-stats">
+        <div class="tech-img-stat"><div class="tech-img-stat-val">鏡面</div><div class="tech-img-stat-lbl">仕上がり</div></div>
+        <div class="tech-img-stat"><div class="tech-img-stat-val">ラック</div><div class="tech-img-stat-lbl">対応方式</div></div>
+        <div class="tech-img-stat"><div class="tech-img-stat-val">全品</div><div class="tech-img-stat-lbl">検査対応</div></div>
+      </div>
     </div>
     <div>
       <div class="sec-label">Feature 02</div>
@@ -873,7 +946,14 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
   <div class="tech-inner">
     <div class="tech-img-wrap">
       <div class="tech-img-label">03 / Zinc Plating</div>
-      <img src="https://sanwa-3.co.jp/files/libs/606/t/202310191048363203.jpg" alt="亜鉛めっき" onerror="this.src='';this.alt='亜鉛めっき'">
+      <div class="tech-img-frame">
+        <img src="https://sanwa-3.co.jp/files/libs/606/t/202310191048363203.jpg" alt="亜鉛めっき" onerror="this.style.display='none'">
+      </div>
+      <div class="tech-img-stats">
+        <div class="tech-img-stat"><div class="tech-img-stat-val">バレル</div><div class="tech-img-stat-lbl">対応方式</div></div>
+        <div class="tech-img-stat"><div class="tech-img-stat-val">ラック</div><div class="tech-img-stat-lbl">対応方式</div></div>
+        <div class="tech-img-stat"><div class="tech-img-stat-val">小〜量産</div><div class="tech-img-stat-lbl">対応ロット</div></div>
+      </div>
     </div>
     <div>
       <div class="sec-label">Feature 03</div>
@@ -1001,8 +1081,8 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
       <div class="ft-name">三和鍍金工業株式会社</div>
       <div class="ft-addr">〒537-0002 大阪府大阪市東成区深江南2-1-23<br>TEL: 06-6971-5833　FAX: 06-6974-7838<br>平日 8:00〜16:45</div>
       <div class="ft-certs">
-        <img class="ft-cert-img" src="https://sanwa-3.co.jp/files/libs/890/sw/202404031040038638.jpg?1712108405" alt="ISO9001" onerror="this.closest('.cert-img-wrap') ? this.closest('.cert-img-wrap').style.display='none' : this.style.display='none'">
-        <img class="ft-cert-img" src="https://sanwa-3.co.jp/files/libs/555/202310181013584334.png?1697591638" alt="EA21" onerror="this.closest('.cert-img-wrap') ? this.closest('.cert-img-wrap').style.display='none' : this.style.display='none'">
+        <img class="ft-cert-img" src="https://sanwa-3.co.jp/files/libs/890/sw/202404031040038638.jpg?1712108405" alt="ISO9001" onerror="this.style.display='none'">
+        <img class="ft-cert-img" src="https://sanwa-3.co.jp/files/libs/555/202310181013584334.png?1697591638" alt="EA21" onerror="this.style.display='none'">
       </div>
     </div>
     <div class="ft-col"><h4>めっき技術</h4><ul>
@@ -1093,7 +1173,7 @@ footer{background:#152030;padding:64px 5vw 32px;border-top:1px solid rgba(255,25
     }
   });
 })();
-(function(){const io=new IntersectionObserver((e)=>{e.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*80);});},{threshold:.06,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));})();
+(function(){const io=new IntersectionObserver((e)=>{e.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*80);});}, { threshold: 0, rootMargin: '0px' });document.querySelectorAll('.reveal').forEach(el=>io.observe(el));})();
 (function(){const b=document.getElementById('fixedBar');if(!b)return;const s=()=>b.classList.toggle('show',window.scrollY>300);window.addEventListener('scroll',s,{passive:true});s();})();
 </script>
 </body>
